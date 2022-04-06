@@ -1,0 +1,71 @@
+import { shallowMount } from '@vue/test-utils'
+
+import Movie from '@/ex9/components/Movie.vue'
+
+describe('Testing App component', () => {
+  const factory = (options) => shallowMount(Movie, { ...options })
+
+  it('Given movie with a title, when the App component is mounted, then the title is displayed', async () => {
+    const wrapper = await factory({
+      propsData: {
+        movie: {
+          Title: 'Devoxx',
+          Year: '2022–',
+          imdbID: 'tt424242',
+          Type: 'movie',
+          Poster: 'http://poster.url',
+        },
+      },
+    })
+
+    expect(wrapper.find('[data-test="title-movie"]').text()).toContain('Devoxx')
+  })
+
+  it('Given a movie with a year, when the App component is mounted, then the year is displayed', async () => {
+    const wrapper = await factory({
+      propsData: {
+        movie: {
+          Year: '2022',
+        },
+      },
+    })
+
+    expect(wrapper.find('[data-test="year-movie"]').text()).toBe('2022')
+  })
+
+  it('Given a movie with year containing a -, when the App component is mounted, then the year is displayed and -Now is added', async () => {
+    const wrapper = await factory({
+      propsData: {
+        movie: {
+          Year: '2022–',
+        },
+      },
+    })
+
+    expect(wrapper.find('[data-test="year-movie"]').text()).toBe('2022–Now')
+  })
+
+  it('Given a movie with a title, when the component is mounted, then first image alt contains the name of the film', async () => {
+    const wrapper = await factory({
+      propsData: {
+        movie: {
+          Title: 'Joker',
+        },
+      },
+    })
+
+    expect(wrapper.find('[data-test="image-movie"]').attributes('alt')).toContain('Joker')
+  })
+
+  it('Given a movie with a title, when the component is mounted, then first image source is img of the movie', async () => {
+    const wrapper = await factory({
+      propsData: {
+        movie: {
+          Poster: 'poster.jpg',
+        },
+      },
+    })
+
+    expect(wrapper.find('[data-test="image-movie"]').attributes('src')).toBe('poster.jpg')
+  })
+})

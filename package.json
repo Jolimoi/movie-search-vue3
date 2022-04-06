@@ -1,0 +1,82 @@
+{
+  "name": "movie-search-vue",
+  "scripts": {
+    "serve:demo1": "vue-cli-service serve src/demo1/main.js",
+    "serve:ex1": "vue-cli-service serve src/ex1/main.js",
+    "serve:ex2": "vue-cli-service serve src/ex2/main.js",
+    "serve:ex3": "vue-cli-service serve src/ex3/main.js",
+    "serve:ex4": "vue-cli-service serve src/ex4/main.js",
+    "serve:ex5": "vue-cli-service serve src/ex5/main.js",
+    "serve:ex6": "vue-cli-service serve src/ex6/main.js",
+    "serve:ex7": "vue-cli-service serve src/ex7/main.js",
+    "serve:ex8": "vue-cli-service serve src/ex8/main.js",
+    "serve:ex9": "vue-cli-service serve src/ex9/main.js",
+    "serve:ex10": "vue-cli-service serve src/ex10/main.js",
+    "serve:ex11": "vue-cli-service serve src/ex11/main.js",
+    "test:ex1": "vue-cli-service test:unit tests/unit/ex1/*.spec.js",
+    "test:ex2": "vue-cli-service test:unit tests/unit/ex2/*.spec.js",
+    "test:ex3": "vue-cli-service test:unit tests/unit/ex3/*.spec.js",
+    "test:ex4": "vue-cli-service test:unit tests/unit/ex4/*.spec.js",
+    "test:ex5": "vue-cli-service test:unit tests/unit/ex5/*.spec.js",
+    "test:ex6": "vue-cli-service test:unit tests/unit/ex6/*.spec.js",
+    "test:ex7": "vue-cli-service test:unit tests/unit/ex7/*.spec.js",
+    "test:ex8": "vue-cli-service test:unit tests/unit/ex8/*.spec.js",
+    "test:ex9": "vue-cli-service test:unit tests/unit/ex9/*.spec.js",
+    "test:ex10": "vue-cli-service test:unit tests/unit/ex10/*.spec.js",
+    "test:ex11": "vue-cli-service test:unit tests/unit/ex11/*.spec.js"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.13",
+    "@vue/cli-plugin-eslint": "~4.5.13",
+    "@vue/cli-plugin-unit-jest": "^4.5.17",
+    "@vue/cli-service": "~4.5.13",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/test-utils": "^2.0.0-0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier-vue": "^3.1.0",
+    "eslint-plugin-vue": "^7.20.0",
+    "mockdate": "^3.0.5",
+    "prettier": "^2.6.2",
+    "typescript": "~3.9.3",
+    "vue-jest": "^5.0.0-0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "vue/script-setup-uses-vars": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
